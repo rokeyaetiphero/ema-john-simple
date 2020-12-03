@@ -13,9 +13,11 @@ import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/notFoundjs/NotFound';
 import ProductDetail from './components/ProductDetail/ProductDetail';
+import Shipment from './components/Shipment/Shipment';
+import Login from './components/Login/Login';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
-const App = () => {
+const App = () =>{
     return (
      <div>
          <Header></Header>
@@ -29,6 +31,12 @@ const App = () => {
         </Route>
         <Route path='/inventory'>
            <Inventory></Inventory>
+        </Route>
+        <Route path='/shipment'>
+           <Shipment></Shipment>
+        </Route>
+        <Route path='/login'>
+           <Login></Login>
         </Route>
         <Route exact path='/'>
            <Shop></Shop>

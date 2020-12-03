@@ -5,14 +5,15 @@ import './Product.css';
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-
-    const {img, name, seller,price,stock,key} = props.product;
+//shop.js theke handleAddProduct function r fakedata r product glo ekta ekta single product props hisebe pathano hyece.evbe ektar por ekta product component create hye fakedata y thaka shobgulo product product.js e show korbe..trpor icchamoto add to cart button e click kore add koro
+    const {img,name,seller,price,stock,key} = props.product;
     return (
         <div className='product'>
             <div>
                 <img src={img} alt="" />
             </div>
             <div>
+        {/* product r name k link kore dewa hyece..route parameter r path e giye reviewitem ba puro item show korbe */}
     <h4 className='product-name'><Link to={'/product/'+key}>{name}</Link></h4>
                 <br />
                 <p><small>By: {seller} </small></p>

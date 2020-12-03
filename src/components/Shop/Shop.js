@@ -6,17 +6,16 @@ import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import {addToDatabaseCart, getDatabaseCart} from '../../utilities/databaseManager';
 import { Link } from 'react-router-dom';
-
-
+ 
 const Shop = () => {
     const first10 = fakeData.slice(0,15);
     const [products,setproducts] = useState(first10);
     const [cart,setCart] = useState([]);
 
     useEffect(()=>{
-        const savedCart = getDatabaseCart();//database thke data load kora
-        const productKeys = Object.keys(savedCart);//load howa object thke key alada kora
-        const previousCart = productKeys.map(existingKey =>{
+        const savedCart = getDatabaseCart();//database thke data load kora..savedCart ekta object
+        const productKeys = Object.keys(savedCart);//load howa object thke key alada kora//array hisebe key gulo dcce
+        const previousCart = productKeys.map(existingKey =>{//21 num line e pass kora hcce savedCart e existingkey.
           const product = fakeData.find(pd => pd.key === existingKey);//fakeData thke existingkey wala product khuje ber kora
           product.quantity = savedCart[existingKey];//oi j key pass kore quantity add kora
           return product;
